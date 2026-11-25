@@ -62,3 +62,6 @@ The homepage uses one Sigiriya illustration with moving celestial bodies and lay
 The discovery map is part of the trip planner at /en/trip-planner#planner-map and is available in each site language. It uses the same locally saved itinerary as the day editor. Quick map editing retains direct map edits and the additional planner stops.
 
 The default vector style uses OpenFreeMap with OpenStreetMap and OpenMapTiles attribution. No tile key is required. To use another provider, set NEXT_PUBLIC_MAP_STYLE_URL to a public MapLibre style URL with attribution on its sources and follow that provider's terms and usage limits. Keep private credentials server-side. If detailed tiles or WebGL are unavailable, the island overview and destination picker keep working. OPENROUTESERVICE_API_KEY enables the existing on-demand road routing. Without it, the map shows markers and the itinerary remains editable.
+
+Routing reuses successful results for up to six hours and combines identical in-flight requests. Each running server instance allows 20 new provider requests per rolling minute. For a multi-instance public deployment, configure a shared gateway limit for /api/trip-routing to enforce a deployment-wide quota. A local process cache resets on restart.
+"# NishkaTravels1.1" 
